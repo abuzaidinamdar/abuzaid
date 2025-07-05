@@ -1,55 +1,26 @@
 import { useEffect, useState } from "react";
 import { motion } from "motion/react";
+import { TextAnimate } from "./magicui/text-animate";
 import "./LampEffect.css";
 
 export const LampEffect = () => {
-  const [firstLine, setFirstLine] = useState("");
-  const [secondLine, setSecondLine] = useState("");
-  const [isTypingFirst, setIsTypingFirst] = useState(true);
-  const [isTypingSecond, setIsTypingSecond] = useState(false);
-
-  const firstText = "Hi, I'm Abuzaid!";
-  const secondText = "A Developer.";
+  const [showFirstText, setShowFirstText] = useState(false);
+  const [showSecondText, setShowSecondText] = useState(false);
 
   useEffect(() => {
-    let timeoutId: NodeJS.Timeout;
+    // Show the first text with Magic UI animation after lamp animation
+    const showFirstTextTimer = setTimeout(() => {
+      setShowFirstText(true);
+    }, 2000); // Delay to let lamp animation finish
 
-    const typeFirstLine = () => {
-      let i = 0;
-      function typeFirst() {
-        if (i < firstText.length) {
-          setFirstLine(firstText.substring(0, i + 1));
-          i++;
-          timeoutId = setTimeout(typeFirst, 80);
-        } else {
-          setIsTypingFirst(false);
-          timeoutId = setTimeout(() => {
-            setIsTypingSecond(true);
-            typeSecondLine();
-          }, 400);
-        }
-      }
-      typeFirst();
-    };
-
-    const typeSecondLine = () => {
-      let j = 0;
-      function typeSecond() {
-        if (j < secondText.length) {
-          setSecondLine(secondText.substring(0, j + 1));
-          j++;
-          timeoutId = setTimeout(typeSecond, 80);
-        } else {
-          setIsTypingSecond(false);
-        }
-      }
-      typeSecond();
-    };
-
-    typeFirstLine();
+    // Show second text after first text animation completes
+    const showSecondTextTimer = setTimeout(() => {
+      setShowSecondText(true);
+    }, 4000); // Delay to let first text animation complete
 
     return () => {
-      if (timeoutId) clearTimeout(timeoutId);
+      clearTimeout(showFirstTextTimer);
+      clearTimeout(showSecondTextTimer);
     };
   }, []);
 
@@ -73,17 +44,29 @@ export const LampEffect = () => {
 
       {/* Text */}
       <div className="lamp-text">
-        <span
-          className={`typewriter ${isTypingFirst ? "typing" : ""}`}
-        >
-          {firstLine}
-        </span>
+        {showFirstText && (
+          <TextAnimate
+            animation="blurInUp"
+            by="character"
+            delay={0.1}
+            duration={1.5}
+            className="typewriter"
+          >
+            Hi, I'm Abuzaid!
+          </TextAnimate>
+        )}
         <br />
-        <span
-          className={`highlight typewriter ${isTypingSecond ? "typing" : ""}`}
-        >
-          {secondLine}
-        </span>
+        {showSecondText && (
+          <TextAnimate
+            animation="slideUp"
+            by="word"
+            delay={0.1}
+            duration={1.2}
+            className="highlight typewriter"
+          >
+            A good frontend developer
+          </TextAnimate>
+        )}
       </div>
     </div>
   );
