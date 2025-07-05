@@ -1,0 +1,361 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+  position: relative;
+  z-index: 100;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  margin: 1em 0;
+}
+
+.read-the-docs {
+  color: #888;
+  background: rgba(0, 0, 0, 0.3);
+  padding: 1em;
+  border-radius: 8px;
+  backdrop-filter: blur(10px);
+}
+
+/* Make all text more visible against the fluid background */
+h1 {
+  text-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+}
+
+button {
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: white;
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: translateY(-2px);
+}
+
+/* Ensure all content is above the fluid background */
+body {
+  position: relative;
+  z-index: 1;
+}
+
+#root > * {
+  position: relative;
+  z-index: 100;
+}
+
+.portfolio-container {
+  max-width: 800px;
+  margin: 0;
+  margin-left: 60px;
+  padding-left: 20px;
+  padding-right: 40px;
+  padding-top: 80px;
+  padding-bottom: 40px;
+  position: relative;
+  z-index: 100;
+  color: white;
+}
+
+.portfolio-container h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+  text-align: left;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.portfolio-container > p {
+  font-size: 1.2rem;
+  opacity: 0.8;
+  margin-bottom: 60px;
+  text-align: left;
+}
+
+.content-section {
+  margin-bottom: 80px;
+  text-align: left;
+}
+
+.content-section h2 {
+  font-size: 2.2rem;
+  font-weight: 600;
+  margin-bottom: 24px;
+  color: #f1f5f9;
+}
+
+.content-section p {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  opacity: 0.9;
+  margin-bottom: 16px;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 24px;
+  margin-top: 32px;
+}
+
+.skill-item {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  padding: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+}
+
+.skill-item:hover {
+  background: rgba(255, 255, 255, 0.08);
+  transform: translateY(-2px);
+}
+
+.skill-item h3 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 12px;
+  color: #e2e8f0;
+}
+
+.skill-item p {
+  opacity: 0.8;
+  margin-bottom: 0;
+}
+
+.project-item, .experience-item {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  padding: 32px;
+  margin-bottom: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+}
+
+.project-item:hover, .experience-item:hover {
+  background: rgba(255, 255, 255, 0.08);
+  transform: translateY(-2px);
+}
+
+.project-item h3, .experience-item h3 {
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin-bottom: 12px;
+  color: #e2e8f0;
+}
+
+.company {
+  font-weight: 500;
+  opacity: 0.7;
+  margin-bottom: 12px !important;
+  font-size: 1rem !important;
+}
+
+.contact-links {
+  display: flex;
+  gap: 24px;
+  margin-top: 32px;
+}
+
+.contact-link {
+  display: inline-block;
+  padding: 12px 24px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.contact-link:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
+}
+
+/* Custom styles for tracing beam layout */
+.tracing-beam-container {
+  position: relative;
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* Lamp Effect Styles */
+.lamp-container {
+  position: absolute;
+  left: 0;
+  top: 0;
+  transform: translateY(0);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  width: 100%;
+  background: transparent;
+  overflow: hidden;
+  margin-left: -25rem;
+}
+
+.lamp-light {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 1;
+}
+
+.lamp-top-line {
+  position: absolute;
+  top: 80px;
+  width: 400px;
+  height: 2px;
+  background: linear-gradient(90deg, 
+    transparent 0%, 
+    #00ffff 20%, 
+    #00ffff 80%, 
+    transparent 100%
+  );
+  box-shadow: 0 0 15px #00ffff, 0 0 30px #00ffff;
+  border-radius: 2px;
+}
+
+.lamp-beam {
+  position: absolute;
+  top: 82px;
+  width: 400px;
+  height: 150px;
+  background: linear-gradient(180deg, 
+    rgba(0, 255, 255, 0.2) 0%,
+    rgba(0, 255, 255, 0.1) 30%,
+    rgba(0, 255, 255, 0.05) 60%,
+    transparent 100%
+  );
+  clip-path: polygon(40% 0%, 60% 0%, 100% 100%, 0% 100%);
+  transform-origin: top center;
+}
+
+.lamp-text {
+  position: relative;
+  z-index: 10;
+  text-align: center;
+  margin-top: -200px; /* Adjusted from 120px to ensure 10px gap */
+}
+
+.lamp-text h1 {
+  font-size: 78rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0;
+  line-height: 1.1;
+  text-shadow: 
+    0 0 10px rgba(255, 255, 255, 0.3),
+    0 0 20px rgba(255, 255, 255, 0.2),
+    0 0 30px rgba(255, 255, 255, 0.1);
+  background: linear-gradient(135deg, 
+    #ffffff 0%, 
+    #e0e0e0 50%, 
+    #ffffff 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.lamp-text h1:first-child {
+  margin-bottom: 10px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .lamp-top-line {
+    width: 250px;
+  }
+  
+  .lamp-beam {
+    width: 250px;
+    height: 180px;
+  }
+  
+  .lamp-text h1 {
+    font-size: 2.5rem;
+  }
+  
+  .lamp-text {
+    margin-top: 90px;
+  }
+}
+
+@media (max-width: 480px) {
+  .lamp-text h1 {
+    font-size: 2rem;
+  }
+  
+  .lamp-top-line {
+    width: 200px;
+  }
+  
+  .lamp-beam {
+    width: 200px;
+    height: 150px;
+  }
+  
+  .lamp-text {
+    margin-top: 80px;
+  }
+}
+
+@media (max-width: 768px) {
+  .portfolio-container {
+    margin-left: 2rem;
+    padding-left: 3rem;
+  }
+}
